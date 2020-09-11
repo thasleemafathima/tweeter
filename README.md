@@ -7,11 +7,11 @@ This repository is the starter code for the project: Students will fork and clon
 
 ## My final Tweeter Page Image
 
-![Tweeter Base page](https://github.com/thasleemafathima/tweeter/blob/master/docs/Tweeter_frontpagebase.png)
-![Tweeter Compose](https://github.com/thasleemafathima/tweeter/blob/master/docs/tweeter_frontpagewrite.png)
-![Tweeter submit tweet](https://github.com/thasleemafathima/tweeter/blob/master/docs/tweetertweet.png)
-![Tweeter error message](https://github.com/thasleemafathima/tweeter/blob/master/docs/tweetererror1.png)
-![Tweeter error message2](https://github.com/thasleemafathima/tweeter/blob/master/docs/tweetererror2.png)
+![Tweeter Base page](https://github.com/thasleemafathima/tweeter/blob/master/public/images/Tweeter_frontpagebase.png)
+![Tweeter Compose](https://github.com/thasleemafathima/tweeter/blob/master/public/images/tweeter_frontpagewrite.png)
+![Tweeter submit tweet](https://github.com/thasleemafathima/tweeter/blob/master/public/images/tweetertweet.png)
+![Tweeter error message](https://github.com/thasleemafathima/tweeter/blob/master/public/images/tweetererror1.png)
+![Tweeter error message2](https://github.com/thasleemafathima/tweeter/blob/master/public/images/tweetererror2.png)
 
 ## Getting Started
 
