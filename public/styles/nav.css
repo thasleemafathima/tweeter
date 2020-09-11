@@ -1,0 +1,16 @@
+.navy {
+  display: flex;
+  justify-content: space-between;
+  background-color: #4056A1;
+  height: 120px;
+  color: #FFFFFF;
+  padding: 1.5em;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.wrt {
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+

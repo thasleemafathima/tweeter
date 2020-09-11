@@ -1,0 +1,72 @@
+/*main*/
+.container {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  padding: 20px;
+  height:100%;
+}
+
+/*1st section*/
+.new-tweet {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-family: 'Source Sans Pro', sans-serif;
+  visibility: hidden;
+}
+#error {
+  color: red;
+
+}
+#tweet-text {
+    border-bottom: 5px solid black;
+    background-color: lightgray;
+    width: 100%;
+    height:100%;
+}
+.counter {
+ float:right 
+}
+.fonti {
+  font-family: 'Bungee', cursive;
+}
+
+/*2nd contaimer*/
+#contain {
+  width: 100%;
+  height: 100%;
+  border: 5px solid black;
+  background-color: lightgray;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  
+}
+#contain:hover {
+  box-shadow: 5px 5px 5px #4056A1;
+}
+.headerr {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 20px;
+}
+.im{
+  display: flex;
+  flex-flow: row;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 20px;
+  justify-content: center;
+}
+.footerr{
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  font-family: 'Source Sans Pro', sans-serif;
+  padding: 20px;
+}
+
+
+
