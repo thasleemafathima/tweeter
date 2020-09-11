@@ -60,6 +60,7 @@ $(document).ready(function() {
           loadTweets($data);
         });
       $("#tweet-text").val('');
+      $('#counter').text('140');
       const loadTweets = () => {
         $.getJSON("/tweets")
           .done(function(tweets) {
