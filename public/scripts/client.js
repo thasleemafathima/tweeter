@@ -66,6 +66,10 @@ $(document).ready(function() {
         .done(function() {
           $('#counter').text("140");
           loadTweets($data);
+        })
+        .fail(function(xhr, status, error) {
+          // error handling
+          alert(xhr.responseText);
         });
       $("#tweet-text").val('');
       loadTweets($data);
@@ -77,5 +81,9 @@ const loadTweets = () => {
   $.getJSON("/tweets")
     .done(function(tweets) {
       renderTweets(tweets);
+    })
+    .fail(function(xhr, status, error) {
+      // error handling
+      alert(xhr.responseText);
     });
 };
