@@ -1,4 +1,4 @@
-.Align {
+.align {
   display: flex;
   height: 400px;
   width: 100%;
@@ -7,7 +7,7 @@
   padding-top: 200px;
 }
 
-.Align-item {
+.align-item {
   display: flex;
   flex-direction: column;
   justify-content: center;

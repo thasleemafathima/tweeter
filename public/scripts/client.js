@@ -2,6 +2,12 @@
 let composeavail = false;
 
 const createTweetElement = function(tweetData) {
+  let $dateCreated = new Date(tweetData.created_at);
+  let $dateToday = new Date();
+
+  let $timeDiff = Math.abs($dateToday.getTime() - $dateCreated.getTime());
+  let $diffDays = Math.ceil($timeDiff / (1000 * 3600 * 24));
+
   const $tweet = $(`<article>
   <header class="headerr">
     <img src=${tweetData.user.avatars} alt="">
@@ -11,7 +17,7 @@ const createTweetElement = function(tweetData) {
   <span class="im">${tweetData.content.text}</span>
   <hr style="height:5px;border-width:0px;background-color:black;max-width:1200px">
   <footer class="footerr">             
-    <p class="left">1 days ago</p>
+    <p class="left">${$diffDays} days ago</p>
     <p class="right">&#9873;&#x1F504;&#x1F499;</p>
     
   </footer>
@@ -22,11 +28,9 @@ const createTweetElement = function(tweetData) {
 
 const compose = function() {
   if (composeavail) {
-    //$('.new-tweet').html("");
     $('.new-tweet').css('visibility', 'hidden');
     composeavail = false;
   } else {
-    //$('.new-tweet').html($comp);
     $('.new-tweet').css('visibility', 'visible');
     composeavail = true;
   }
@@ -36,9 +40,9 @@ const renderTweets = function(tweets) {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-  let twt = "";
+  $('#contain').empty();
   for (let tweet in tweets) {
-    twt = createTweetElement(tweets[tweet]);
+    const twt = createTweetElement(tweets[tweet]);
     $('#contain').prepend(twt);
   }
 };
@@ -46,28 +50,32 @@ const renderTweets = function(tweets) {
 $(document).ready(function() {
   let $data,$textarea;
   const $button = $('#button');
-  $button.on('click', function(a) {
-    a.preventDefault();
+  loadTweets($data);
+  $button.on('click', function(e) {
+    e.preventDefault();
     console.log('Button clicked, performing ajax call...');
     $textarea = $(this).closest("form").find("textarea");
     $data = $textarea.serialize();
     if ($('#tweet-text').val() === null || $('#tweet-text').val() === "") {
       $("#error").text("Content Not Found");
+    } else if (document.getElementById('error').innerHTML === "Content is too long"){
+      $("#error").text("Content is too long");
     } else {
       $("#error").text("");
       $.post("/tweets/", $data)
         .done(function() {
+          $('#counter').text("140");
           loadTweets($data);
         });
       $("#tweet-text").val('');
-      $('#counter').text('140');
-      const loadTweets = () => {
-        $.getJSON("/tweets")
-          .done(function(tweets) {
-            renderTweets(tweets);
-          });
-      };
+      loadTweets($data);
     }
   });
 });
 
+const loadTweets = () => {
+  $.getJSON("/tweets")
+    .done(function(tweets) {
+      renderTweets(tweets);
+    });
+};
